@@ -1,0 +1,157 @@
+@charset "utf-8";
+@import "bourbon/bourbon";
+@import "neat/neat";
+
+$main-text: 'VT323', sans-serif;
+$emphasis-text: 'Press Start 2P', sans-serif;
+$white: #fff;
+$main-gold: #FDBD16;
+$mobile: new-breakpoint(max-width 480px, 6);
+
+body {
+  background: #000;
+  color: $white;
+  font-family: $main-text;
+  text-transform: uppercase;
+  font-size: 1em;
+   }
+
+nav {
+  @include span-columns(12);
+  margin: 0 auto;
+  text-align: center;
+  ul {
+    list-style: none;
+    padding: 15px;
+    li {
+      display: inline-block;
+      list-style: none;
+      font-family: $emphasis-text;
+      text-transform: uppercase;
+      padding-bottom: 10px;
+      a {
+      color: $main-gold;
+      text-decoration: none;
+      padding: 25px;
+      }
+      a:hover {
+      color: $white;
+      }
+      .active {
+        background: url('/images/coin_nav.gif') scroll no-repeat right center;
+        background-size: 20px 20px;
+        padding-right: 25px;
+        padding-top: 2px;
+        padding-bottom: 2px;
+        color: $white;
+      }
+    }
+  }
+}
+
+
+
+section {
+  @include outer-container;
+}
+
+iframe, p, author { @include span-columns(8);
+@include shift(2);}
+
+p, author{
+  color: $main-gold;
+  &:hover {
+  color: lighten($main-gold, 20%);
+  }
+ }
+
+ author {
+ font-size: 2em;
+ }
+
+iframe, author {
+  padding-bottom: 40px;
+  font-family: $emphasis-text;
+}
+
+article {@include span-columns(4)}
+
+.shows {margin-right: 0;}
+
+.date, .venue, .location, .tickets {
+  font-size: 1.5em;
+  padding-bottom: 20px;
+}
+
+.date {@include span-columns(1); @include shift(1); text-align: right; color: $main-gold;}
+.venue {@include span-columns(3);}
+.location {@include span-columns(3);}
+a.tickets {@include span-columns(1); color: $white; text-decoration: none; text-align: right; background-color: $main-gold; width: 85px; border-radius: 4px; padding: 0.1em; text-align: center;}
+
+img.download {
+  max-width: 100%;
+  margin: 0 auto;
+  display: block;
+  padding: 20px;
+  opacity: 0.8;
+  &:hover{
+  opacity: 1;
+  }
+}
+
+#contact {
+  margin: 0 auto;
+  width: 500px;
+  max-width: 100%;
+}
+
+form {
+  margin: 0 20px auto;
+}
+
+label {
+font-size: 1.5em;
+}
+
+input[type="submit"] {
+  -webkit-appearance: none;
+  background: $main-gold;
+  border: none;
+  padding: 9px 10px 7px;
+  border-radius: 4px;
+  text-transform: uppercase;
+  margin-top: 5px;
+  font-weight: 900;
+  font-family: $emphasis-text;
+}
+
+input[type="text"], input[type="email"], textarea {
+  display: block;
+  float: none;
+  max-width: 100%;
+  width: 500px;
+  margin: 5px 0;
+   -webkit-appearance: none;
+  background: black;
+  border: 2px solid $main-gold;
+  border-radius: 4px;
+}
+
+input[type="text"], input[type="email"] {
+  height: 35px;
+}
+
+textarea {
+  height: 150px;
+}
+
+.bio {
+  font-size: 1.5em;
+}
+
+strong {
+  font-size: 1.2em;
+  color: lighten($main-gold, 20%);
+}
+
+
